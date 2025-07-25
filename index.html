@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Викторина</title>
+  <title>The Most Important Quiz Ever</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      font-family: 'Comic Sans MS', sans-serif;
+      background: #f9f9f9;
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
@@ -16,93 +16,87 @@
       width: 100%;
       height: auto;
       margin-bottom: 20px;
+      border: 3px dashed hotpink;
     }
     h1 {
       text-align: center;
+      color: #333;
     }
     .question {
       margin-bottom: 20px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .answers label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 8px;
       cursor: pointer;
     }
     #submit {
       display: block;
       width: 100%;
-      padding: 10px;
-      background: #007acc;
+      padding: 12px;
+      background: #ff4081;
       color: white;
       border: none;
       font-size: 16px;
       cursor: pointer;
+      border-radius: 8px;
       margin-top: 20px;
+    }
+    #submit:hover {
+      background: #e91e63;
     }
     #result {
       margin-top: 20px;
       font-weight: bold;
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
+      color: #2e7d32;
     }
   </style>
 </head>
 <body>
 
-  <!-- Замените src на путь к вашей картинке -->
-  <img src="your-image.jpg" alt="Ваша картинка" />
+  <!-- Replace this with your actual image -->
+  <img src="your-image.jpg" alt="Quiz Banner of Destiny" />
 
-  <h1>Викторина</h1>
+  <h1>The Most Important Quiz You'll Ever Take</h1>
 
   <form id="quizForm">
     <div class="question">
-      <p>1. Кто пишет журналы?</p>
+      <p>1. If a journalist keeps journals, what does an analyst keep?</p>
       <div class="answers">
-        <label><input type="radio" name="q1" value="0" required /> Аналитик</label>
-        <label><input type="radio" name="q1" value="1" /> Журналист</label>
-        <label><input type="radio" name="q1" value="0" /> Инженер</label>
+        <label><input type="radio" name="q1" value="0" required /> A USB stick</label>
+        <label><input type="radio" name="q1" value="0" /> Secrets</label>
+        <label><input type="radio" name="q1" value="1" /> Anals (obviously)</label>
       </div>
     </div>
 
     <div class="question">
-      <p>2. Какой язык используется для создания веб-страниц?</p>
+      <p>2. Which language is used to make websites look like websites?</p>
       <div class="answers">
-        <label><input type="radio" name="q2" value="1" required /> HTML</label>
-        <label><input type="radio" name="q2" value="0" /> Python</label>
-        <label><input type="radio" name="q2" value="0" /> C++</label>
+        <label><input type="radio" name="q2" value="1" required /> HTML (a.k.a. HyperText Magical Language)</label>
+        <label><input type="radio" name="q2" value="0" /> Klingon</label>
+        <label><input type="radio" name="q2" value="0" /> Binary code (only for true nerds)</label>
       </div>
     </div>
 
     <div class="question">
-      <p>3. Что хранит аналитик?</p>
+      <p>3. What is the opposite of “productive work”?</p>
       <div class="answers">
-        <label><input type="radio" name="q3" value="0" required /> Журналы</label>
-        <label><input type="radio" name="q3" value="1" /> Аналы</label>
-        <label><input type="radio" name="q3" value="0" /> Файлы</label>
+        <label><input type="radio" name="q3" value="0" required /> Doing taxes</label>
+        <label><input type="radio" name="q3" value="0" /> Sleep (debatable)</label>
+        <label><input type="radio" name="q3" value="1" /> Taking this quiz</label>
       </div>
     </div>
 
-    <button type="submit" id="submit">Показать результат</button>
+    <button type="submit" id="submit">Reveal My Genius</button>
   </form>
 
   <div id="result"></div>
 
   <script>
-    document.getElementById('quizForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      let score = 0;
-      const total = 3;
-      const form = e.target;
-
-      for (let i = 1; i <= total; i++) {
-        const answer = form[`q${i}`].value;
-        if (answer === "1") score++;
-      }
-
-      const resultText = `Вы набрали ${score} из ${total} правильных ответов.`;
-      document.getElementById('result').textContent = resultText;
-    });
-  </script>
-
-</body>
-</html>
+    document
