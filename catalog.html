@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopAlco/catalog</title>
+  <link rel="stylesheet" href="src/css/font.css">
+  <link rel="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" href="src/css/global-style.css">
+  <link rel="stylesheet" href="src/css/footer.css">
+  <link rel="stylesheet" href="src/css/adaptive-media/header-slider.css">
+  <link rel="stylesheet" href="src/css/catalog-page.css">
+
+</head>
+<header>
+  <div class="container">
+    <div class="wrap">
+      <div class="logo"><a href="src/index.html"><img src="src/assets/pictures/Logo.svg" alt="Логотип"></a></div>
+
+      <div class="search">
+        <form action="" class="form-search">
+          <button class="btn-search" type="submit"></button>
+          <input id="search" class="input-text" type="text" name="search" placeholder="">
+        </form>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="catalog.html" class="link-header-menu">Catalog</a>
+      <a href="contact-page.html" class="link-header-menu">Contacts</a>
+      <a href="about-us.html" class="link-header-menu">About Us</a>
+      <a href="#" class="link-header-menu cart-btn">Basket</a>
+      <div class="cart-modal">
+        <div class="cart-header">
+          <h2>Basket</h2>
+          <button class="close-cart-btn">Back</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+          <div>
+            <h3>Total: </h3>
+            <span class="cart-total">0 $</span>
+          </div>
+          <div class="cart-footer-button">
+            <button class="buy-cart-btn">Buy</button>
+            <button class="clear-cart-btn">Clear basket</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<body>
+  <!-- Фильтры -->
+  <div class="filters">
+    <label for="type-filter"></label>
+    <select id="type-filter">
+      <option value="">All</option>
+      <option value="whiskey">Whiskey</option>
+      <option value="wine">Wine</option>
+      <option value="champagne">Champagne</option>
+      <option value="vodka">Vodka</option>
+      <option value="beer">Beer</option>
+      <option value="gin">Gin</option>
+      <option value="tequila">Tequila</option>
+      <option value="cognac">Cognac</option>
+      <option value="rum">Rum</option>
+      <option value="liqueur">Liqueur</option>
+      <option value="other">Other</option>
+
+    </select>
+
+    <label for="country-filter"></label>
+    <select id="country-filter">
+      <option value="">All</option>
+      <option value="france">France</option>
+      <option value="Italy">Italy</option>
+      <option value="spain">Spain</option>
+      <option value="mexico">Mexico</option>
+      <option value="united kingdom">U.K.</option>
+      <option value="portugal">Portugal</option>
+      <option value="scotland">Scotland</option>
+      <option value="romania">Romania</option>
+      <option value="ireland">Ireland</option>
+    </select>
+  </div>
+
+  <div class="products">
+    <div class="product">
+      <img src="">
+      <p class="product-type">Тип алкоголя: Вино</p>
+      <p class="product-country">Страна производитель: Франция</p>
+      <p class="product-price">Цена: 1000 руб.</p>
+      <p class="product-volume">Объем: 750 мл.</p>
+      <p class="product-popularity">Популярность: 3/5</p><button></button>
+    </div>
+  </div>
+
+  <section>
+    <div class="Request-call">
+      <p class="Request-call-text-01">
+        Leave us your phone number and we will call you right away
+      </p>
+      <p class="Request-call-text-02">Do you have any questions?</p>
+      <div class="form-Request-call">
+        <form method="get">
+          <div id="input-question">
+            <input class="input-your-question" type="text" placeholder="Your name" />
+          </div>
+          <div id="phone">
+            <input class="input-your-phone" type="tel" name="tel" placeholder="Your phone" />
+          </div>
+          <button class="btn-call" type="submit">Request a call</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="wrap">
+        <div class="footer-logo">
+          <a href="src/index.html"><img src="src/assets/pictures/Logo.svg" alt="Логотип"></a>
+        </div>
+      </div>
+      <nav class="footer-menu">
+        <a href="https://www.google.com/intl/ru/gmail/about/" class="link-footer-menu">ololo111@gmail.com</a>
+        <a href="tel:+375 29 1234567" class="link-footer-menu">+375 29 1234567</a>
+        <a href="https://www.instagram.com/" class="link-footer-menu">Instagram</a>
+        <a href="https://web.telegram.org/k/" class="link-footer-menu">Telegram</a>
+      </nav>
+      <div class="footer-policy">
+        <p>@2023</p>
+        <p>All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+  <button onclick="topFunction()" id="myBtn" title="OnTop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+      <circle fill="none" cx="12" cy="12" r="11" stroke="#555" stroke-width="2" />
+      <path fill="#555"
+        d="M16.293 10.293l-4-4a.999.999 0 0 0-1.414 0l-4 4a.999.999 0 1 0 1.414 1.414L11 9.414v9.172a.999.999 0 1 0 2 0V9.414l2.293 2.293a.999.999 0 1 0 1.414-1.414z" />
+    </svg>
+  </button>
+
+
+  <script src="src/js/catalog-script.js"></script>
+  <script src="src/js/modules/search-module/search.js"></script>
+  <script src="src/js/modules/on-top-button/on-top.js"></script>
+</body>
+
+</html>
