@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Викторина</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .answers label {
+      display: block;
+      margin-bottom: 5px;
+      cursor: pointer;
+    }
+    #submit {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: #007acc;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Замените src на путь к вашей картинке -->
+  <img src="your-image.jpg" alt="Ваша картинка" />
+
+  <h1>Викторина</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. Кто пишет журналы?</p>
+      <div class="answers">
+        <label><input type="radio" name="q1" value="0" required /> Аналитик</label>
+        <label><input type="radio" name="q1" value="1" /> Журналист</label>
+        <label><input type="radio" name="q1" value="0" /> Инженер</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>2. Какой язык используется для создания веб-страниц?</p>
+      <div class="answers">
+        <label><input type="radio" name="q2" value="1" required /> HTML</label>
+        <label><input type="radio" name="q2" value="0" /> Python</label>
+        <label><input type="radio" name="q2" value="0" /> C++</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <p>3. Что хранит аналитик?</p>
+      <div class="answers">
+        <label><input type="radio" name="q3" value="0" required /> Журналы</label>
+        <label><input type="radio" name="q3" value="1" /> Аналы</label>
+        <label><input type="radio" name="q3" value="0" /> Файлы</label>
+      </div>
+    </div>
+
+    <button type="submit" id="submit">Показать результат</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      const total = 3;
+      const form = e.target;
+
+      for (let i = 1; i <= total; i++) {
+        const answer = form[`q${i}`].value;
+        if (answer === "1") score++;
+      }
+
+      const resultText = `Вы набрали ${score} из ${total} правильных ответов.`;
+      document.getElementById('result').textContent = resultText;
+    });
+  </script>
+
+</body>
+</html>
