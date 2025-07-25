@@ -76,7 +76,7 @@
     </div>
 
     <div class="question">
-      <p>2. How many potatoes are needed to remove 1 eX channel?</p>
+      <p>2. How many spuds are needed to remove 1 eX channel?</p>
       <div class="answers">
         <label><input type="radio" name="q2" value="1" required />1</label>
         <label><input type="radio" name="q2" value="0" />2</label>
@@ -87,9 +87,9 @@
     <div class="question">
       <p>3. What food is best suited for feeding ducks?</p>
       <div class="answers">
-        <label><input type="radio" name="q3" value="0" required />Potato chips</label>
+        <label><input type="radio" name="q3" value="1" required />Potato chips</label>
         <label><input type="radio" name="q3" value="0" />Anals</label>
-        <label><input type="radio" name="q3" value="1" />Pizza crust</label>
+        <label><input type="radio" name="q3" value="0" />Pizza crust</label>
       </div>
     </div>
 
@@ -99,4 +99,39 @@
   <div id="result"></div>
 
   <script>
-    document
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      const total = 3;
+      const form = e.target;
+
+      for (let i = 1; i <= total; i++) {
+        const answer = form[`q${i}`].value;
+        if (answer === "1") score++;
+      }
+
+      let message = "";
+      if (score === 3) {
+        message = "🌟 You're a genius... or you guessed really well!";
+      } else if (score === 2) {
+        message = "🔥 Nice! You're 66.6% smart. Not suspicious at all.";
+      } else if (score === 1) {
+        message = "🤔 One correct answer... statistically impressive!";
+      } else {
+        message = "💀 0/3? Even ducks are judging you.";
+      }
+
+      document.getElementById('result').innerHTML = `
+        Score: ${score}/3<br>${message}<br><br>
+        <button onclick="location.reload()" style="margin-top:15px;padding:10px 15px;background:#007bff;color:white;border:none;border-radius:6px;cursor:pointer;">
+          Try Again
+        </button>
+      `;
+
+      // Optionally disable form after submission
+      document.getElementById('submit').disabled = true;
+    });
+  </script>
+
+</body>
+</html>
